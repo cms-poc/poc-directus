@@ -9,4 +9,7 @@ public class Collection {
     @NonNull
     @JsonProperty("collection")
     private final String name;
+
+    @NonNull
+    private final boolean managed;
 }
