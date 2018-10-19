@@ -42,4 +42,10 @@ environment variable.
 $ mvn spring-boot:run
 ```
 
+If you do not have Maven installed, you can use the Maven Wrapper that is included with the project instead.
+
+```bash
+$ ./mvnw spring-boot:run
+```
+
 The application will be accessible at `http://localhost:8080`.
