@@ -49,3 +49,15 @@ $ ./mvnw spring-boot:run
 ```
 
 The application will be accessible at `http://localhost:8080`.
+
+## Observations
+
+* Directus uses a different format for the collection entity when returning collections as a list compared to when
+creating a collection. For that reason, there are two versions of the collection entity class: `Collection` and
+`ListedCollection`.
+
+* Directus provides a simple API for authentication and retrieval/renewal of JWT tokens. This proof of concept
+simply uses the default "admin_token" instead of implementing authentication functionality.
+
+* This proof of concept does not dive too deeply into the Directus API. It just creates/lists collections, and
+creates/lists items in a selected collection. That much is pretty straight-forward.
