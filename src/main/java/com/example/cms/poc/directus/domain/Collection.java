@@ -27,7 +27,7 @@ public class Collection {
     private String note;
 
     @NonNull
-    private Field[] fields;
+    private List<Field> fields;
 
     public Collection() {
         this.name = "";
@@ -35,22 +35,16 @@ public class Collection {
         this.hidden = false;
         this.single = false;
         this.note = "";
-        this.fields = new Field[0];
+        this.fields = new ArrayList<>();
     }
 
     public Collection withPrimaryKey(String name) {
-        Field[] newFields = new Field[fields.length + 1];
-        System.arraycopy(fields, 0, newFields, 0, fields.length);
-        newFields[fields.length] = new Field(name, "integer", "int", "primary_key", true, true, 10, false);
-        fields = newFields;
+        fields.add(new Field(name, "integer", "int", "primary_key", true, true, 10, false));
         return this;
     }
 
     public Collection withStringField(String name, int length, boolean required, String note) {
-        Field[] newFields = new Field[fields.length + 1];
-        System.arraycopy(fields, 0, newFields, 0, fields.length);
-        newFields[fields.length] = new Field(name, "string", "varchar", "text-input", length, required, note);
-        fields = newFields;
+        fields.add(new Field(name, "string", "varchar", "text-input", length, required, note));
         return this;
     }
 }
