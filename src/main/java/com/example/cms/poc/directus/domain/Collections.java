@@ -8,5 +8,5 @@ import java.util.List;
 @Data
 public class Collections {
     @NonNull
-    private final List<Collection> data;
+    private final List<ListedCollection> data;
 }

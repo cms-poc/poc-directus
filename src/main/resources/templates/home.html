@@ -27,6 +27,19 @@
                 </tr>
                 </tbody>
             </table>
+
+            <form class="pt-4" action="/" method="post">
+                <div class="form-group">
+                    <input id="name" name="name" type="text" class="form-control" placeholder="New collection name" autofocus/>
+                </div>
+                <input type="hidden" name="managed" value="true"/>
+                <input type="hidden" name="hidden" value="false"/>
+                <input type="hidden" name="single" value="false"/>
+                <div class="form-group">
+                    <input id="note" name="note" type="text" class="form-control" placeholder="A brief description of the new collection"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
         </div>
     </div>
 </div>
