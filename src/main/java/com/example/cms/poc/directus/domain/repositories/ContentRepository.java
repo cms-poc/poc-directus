@@ -2,6 +2,7 @@ package com.example.cms.poc.directus.domain.repositories;
 
 import com.example.cms.poc.directus.domain.Collection;
 import com.example.cms.poc.directus.domain.Collections;
+import com.example.cms.poc.directus.domain.Item;
 import com.example.cms.poc.directus.domain.Items;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
@@ -16,4 +17,7 @@ public interface ContentRepository {
 
     @GetMapping("/_/items/{collection}")
     Items items(@PathVariable("collection") String collection, @RequestParam("access_token") String accessToken);
+
+    @PostMapping("/_/items/{collection}")
+    void addItem(@PathVariable("collection") String collection, @RequestBody Item item, @RequestParam("access_token") String accessToken);
 }
